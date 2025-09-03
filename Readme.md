@@ -198,7 +198,6 @@ The application automatically:
 Additional documentation is available in the `docs/` directory:
 - GitHub Secrets Guide
 - Railway Deployment Guide
-- Screenshots and tutorials
 
 ## 🤝 Contributing
 
@@ -208,10 +207,6 @@ Additional documentation is available in the `docs/` directory:
 4. Add tests for new functionality
 5. Ensure all tests pass
 6. Submit a pull request
-
-## 📄 License
-
-This project is part of an educational exercise and is provided as-is for learning purposes.
 
 ## 🆘 Support
 
