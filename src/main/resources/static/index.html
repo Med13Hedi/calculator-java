@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title>Java Calculator</title>
+</head>
+<body>
+<h1>Java Calculator (CI/CD Demo)</h1>
+<div>
+    <label>Operation:
+        <select id="op">
+            <option value="add">Add</option>
+            <option value="sub">Subtract</option>
+            <option value="mul">Multiply</option>
+            <option value="div">Divide</option>
+        </select>
+    </label>
+</div>
+<div>
+    <input id="a" type="number" placeholder="A" />
+    <input id="b" type="number" placeholder="B" />
+</div>
+<button id="calcBtn">Calculate</button>
+<pre id="output"></pre>
+
+<script>
+    document.getElementById('calcBtn').addEventListener('click', async () => {
+        const op = document.getElementById('op').value;
+        const a = parseFloat(document.getElementById('a').value);
+        const b = parseFloat(document.getElementById('b').value);
+        const res = await fetch('/calculate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ op, a, b })
+        });
+        const data = await res.json();
+        document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+    });
+</script>
+</body>
+</html>

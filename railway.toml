@@ -1,0 +1,13 @@
+# Railway Deployment Configuration for Java
+# This file tells Railway how to deploy your Java application using Docker
+
+[build]
+  builder = "DOCKERFILE"
+
+[deploy]
+  healthcheckPath = "/ping"
+  restartPolicyType = "ON_FAILURE"
+
+[env]
+  JAVA_OPTS = "-Xmx256m"
+  PORT = "8080"
